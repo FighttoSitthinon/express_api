@@ -1,0 +1,90 @@
+/**
+ * @swagger
+ * definition:
+ *   users:
+ *     properties:
+ *       name:
+ *         type: string
+ *       email:
+ *         type: string
+ *       age:
+ *         type: integer
+ *       sex:
+ *         type: string
+ */
+
+/**
+ * @swagger
+ * /api/users:
+ *   get:
+ *     tags:
+ *       - users
+ *     description: Returns all users
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: An array of users
+ *         schema:
+ *           $ref: '#/definitions/users'
+ */
+
+/**
+ * @swagger
+ * /api/users:
+ *   post:
+ *     tags:
+ *       - users
+ *     description: Creates a new user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: tarun
+ *         description: user object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/user'
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ */
+
+ /**
+ * @swagger
+ * /api/users/{id}:
+ *   put:
+ *     tags: users
+ *     description: Updates a single user
+ *     produces: application/json
+ *     parameters:
+ *       name: tarun
+ *       in: body
+ *       description: Fields for the user resource
+ *       schema:
+ *         type: array
+ *         $ref: '#/definitions/user'
+ *     responses:
+ *       200:
+ *         description: Successfully updated
+ */
+
+ /**
+ * @swagger
+ * /api/users/{id}:
+ *   delete:
+ *     tags:
+ *       - users
+ *     description: Deletes a single user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: user's id
+ *         in: path
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: Successfully deleted
+ */
